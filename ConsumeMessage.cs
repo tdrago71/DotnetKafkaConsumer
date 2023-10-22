@@ -11,9 +11,11 @@ namespace KafkaConsumer
     {
         public void ReadMessage()
         {
+            // Change local host to match docker url
+            // Change groupid to get list of all the messages from beginning
             var config = new ConsumerConfig
             {
-                BootstrapServers = "localhost:9092",
+                BootstrapServers = "localhost:29092",
                 AutoOffsetReset = AutoOffsetReset.Earliest,
                 ClientId = "my-app",
                 GroupId = "my-group",
